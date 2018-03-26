@@ -1,6 +1,6 @@
 
 import { NativeModules } from 'react-native';
 
-const { RNCustomerlyReact } = NativeModules;
+const { RNCustomerly } = NativeModules;
 
-export default RNCustomerlyReact;
+export default RNCustomerly;
