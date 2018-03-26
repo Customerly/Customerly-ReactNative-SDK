@@ -35,6 +35,8 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
         return "RNCustomerly";
     }
 
+    //Customerly.configure(this, "00s11288");
+
     @ReactMethod
     public void openSupport() {
         Activity activity = this.getCurrentActivity();

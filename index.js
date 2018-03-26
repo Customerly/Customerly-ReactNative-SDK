@@ -1,6 +1,9 @@
-
 import { NativeModules } from 'react-native';
 
 const { RNCustomerly } = NativeModules;
 
-export default RNCustomerly;
+export default {
+	openSupport: function () {
+        RNCustomerly.openSupport();
+    },
+};
