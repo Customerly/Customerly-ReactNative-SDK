@@ -5,7 +5,7 @@
 #import <React/RCTBridgeModule.h>
 #endif
 
-@interface RNCustomerlyReact : NSObject <RCTBridgeModule>
+@interface RNCustomerly : NSObject <RCTBridgeModule>
 
 @end
   

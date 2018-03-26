@@ -1,7 +1,7 @@
 
-#import "RNCustomerlyReact.h"
+#import "RNCustomerly.h"
 
-@implementation RNCustomerlyReact
+@implementation RNCustomerly
 
 - (dispatch_queue_t)methodQueue
 {
