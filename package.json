@@ -3,7 +3,7 @@
   "name": "react-native-customerly-react",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "RNCustomerly.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
