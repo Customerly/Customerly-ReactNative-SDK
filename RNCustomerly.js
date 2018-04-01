@@ -20,7 +20,7 @@ export default {
      * Avoid to enable it in release app versions
      */
 	setVerboseLogging: function (pEnabled) {
-		assert( typeof(variable) == typeof(true),  'pEnabled parameter type for setVerboseLogging boolean expected');
+		assert( typeof(variable) == typeof(true),  'pEnabled parameter type expected: boolean');
         RNCustomerly.setVerboseLogging(pEnabled);
     },
     
@@ -45,7 +45,7 @@ export default {
 	    	&& typeof(user_id) === "string"
 	    	&& typeof(name) === "string"
 	    	&& typeof(attributes) == typeof(ReadableMap())
-	    	&& typeof(company) == typeof(ReadableMap()))
+	    	&& typeof(company) == typeof(ReadableMap()), "check parameter types");
 	    RNCustomerly.registerUser(email, user_id, name, attributes, company, successCallback, failureCallback);
     }
     
@@ -56,7 +56,7 @@ export default {
      * Check documentation for the configure
      */
     setAttributes: function(attributes = ReadableMap(), successCallback = ()=>{}, failureCallback = ()=>{}) {
-	    assert(typeof(attributes) == typeof(ReadableMap()))
+	    assert(typeof(attributes) == typeof(ReadableMap()), "check parameter types");
 	    RNCustomerly.setAttributes(attributes, successCallback, failureCallback);
     }
     
@@ -67,7 +67,7 @@ export default {
      * Check documentation for the configure
      */
     setCompany: function(company = ReadableMap(), successCallback = ()=>{}, failureCallback = ()=>{}) {
-	    assert(typeof(company) == typeof(ReadableMap()))
+	    assert(typeof(company) == typeof(ReadableMap()), "check parameter types");
 	    RNCustomerly.setCompany(company, successCallback, failureCallback);
     }
     
@@ -88,7 +88,7 @@ export default {
      * Check documentation for the configure
      */
     trackEvent: function(pEventName) {
-	    assert(typeof(email) === "string")
+	    assert(typeof(email) === "string", "check parameter types");
 	    RNCustomerly.trackEvent();
     }
     
@@ -96,7 +96,7 @@ export default {
      * Call this method to disable or enable the message receiving. It is ENABLED by default.
      */
     setSupportEnabled: function(pEnabled) {
-		assert( typeof(variable) == typeof(true),  'pEnabled parameter type for setSupportEnabled boolean expected');
+		assert( typeof(variable) == typeof(true),  'pEnabled parameter type for setSupportEnabled boolean expected', "check parameter types");
 	    RNCustomerly.setSupportEnabled();
     }
     
@@ -104,7 +104,7 @@ export default {
      * Call this method to disable or enable the survey receiving. It is ENABLED by default
      */
     setSurveysEnabled: function(pEnabled) {
-		assert( typeof(variable) == typeof(true),  'pEnabled parameter type for setSurveysEnabled boolean expected');
+		assert( typeof(variable) == typeof(true), "check parameter types");
 		RNCustomerly.setSurveysEnabled();
     }
 };
