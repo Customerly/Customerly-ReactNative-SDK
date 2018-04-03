@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3E7B58A1CC2AC0600A0062D /* RNCustomerly.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCustomerly.m */; };
+		4507EA7D206EE873008644BB /* RNCustomerly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507EA7C206EE873008644BB /* RNCustomerly.swift */; };
+		D8A74C9AC7A1A1ABA1DA99E5 /* Pods_RNCustomerly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 106DBCB11F7DB2B7A6CF5312 /* Pods_RNCustomerly.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,10 +24,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06B7081E130D9DCFB672E78E /* Pods-RNCustomerly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCustomerly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNCustomerly/Pods-RNCustomerly.debug.xcconfig"; sourceTree = "<group>"; };
+		106DBCB11F7DB2B7A6CF5312 /* Pods_RNCustomerly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNCustomerly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		134814201AA4EA6300B7C361 /* libRNCustomerly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCustomerly.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4507EA7C206EE873008644BB /* RNCustomerly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNCustomerly.swift; sourceTree = "<group>"; };
 		45B4AAA4206EE58A00A0D1F3 /* RNCustomerly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNCustomerly-Bridging-Header.h"; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNCustomerly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCustomerly.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNCustomerly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCustomerly.m; sourceTree = "<group>"; };
+		D61473A54C4153DA56BBDC92 /* Pods-RNCustomerly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCustomerly.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNCustomerly/Pods-RNCustomerly.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A74C9AC7A1A1ABA1DA99E5 /* Pods_RNCustomerly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,9 +59,29 @@
 			children = (
 				B3E7B5881CC2AC0600A0062D /* RNCustomerly.h */,
 				B3E7B5891CC2AC0600A0062D /* RNCustomerly.m */,
+				4507EA7C206EE873008644BB /* RNCustomerly.swift */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				45B4AAA4206EE58A00A0D1F3 /* RNCustomerly-Bridging-Header.h */,
+				D00200EF630D3C3E63139343 /* Pods */,
+				C1B91A3ADE44D9F2C08F93A8 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		C1B91A3ADE44D9F2C08F93A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				106DBCB11F7DB2B7A6CF5312 /* Pods_RNCustomerly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D00200EF630D3C3E63139343 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06B7081E130D9DCFB672E78E /* Pods-RNCustomerly.debug.xcconfig */,
+				D61473A54C4153DA56BBDC92 /* Pods-RNCustomerly.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,9 +91,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNCustomerly" */;
 			buildPhases = (
+				B754DE393B4DD826E2579739 /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
+				4E9287F6B2A8F41198A95874 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -110,12 +138,48 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4E9287F6B2A8F41198A95874 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNCustomerly/Pods-RNCustomerly-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B754DE393B4DD826E2579739 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNCustomerly-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* RNCustomerly.m in Sources */,
+				4507EA7D206EE873008644BB /* RNCustomerly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +284,7 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06B7081E130D9DCFB672E78E /* Pods-RNCustomerly.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
@@ -241,6 +306,7 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D61473A54C4153DA56BBDC92 /* Pods-RNCustomerly.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (

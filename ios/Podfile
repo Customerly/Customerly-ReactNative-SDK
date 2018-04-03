@@ -1,0 +1,6 @@
+platform :ios, '9.0'
+use_frameworks!
+
+target 'RNCustomerly' do
+  pod 'CustomerlySDK', '2.0.0'
+end
