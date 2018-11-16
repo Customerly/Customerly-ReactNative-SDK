@@ -1,8 +1,9 @@
 
 #import "RNCustomerly.h"
-#import <CustomerlySDK/CustomerlySDK-Swift.h>
 
 @implementation RNCustomerly
+
+@synthesize bridge = _bridge;
 
 - (dispatch_queue_t)methodQueue
 {
