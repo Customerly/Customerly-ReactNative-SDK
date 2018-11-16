@@ -7,24 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02348D0879E96CA4E6AA89D3 /* Pods_RNCustomerly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44BCB24E7EB03FCEB456B7BE /* Pods_RNCustomerly.framework */; };
 		4507EA7E20741388008644BB /* RNCustomerly.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCustomerly.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		58B511D91A9E6C8500147676 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNCustomerly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCustomerly.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1800DE06219F1DD000499B86 /* Temporary-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Temporary-Swift.h"; sourceTree = "<group>"; };
 		44BCB24E7EB03FCEB456B7BE /* Pods_RNCustomerly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNCustomerly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNCustomerly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCustomerly.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNCustomerly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCustomerly.m; sourceTree = "<group>"; };
@@ -35,7 +23,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02348D0879E96CA4E6AA89D3 /* Pods_RNCustomerly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +48,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				1800DE06219F1DD000499B86 /* Temporary-Swift.h */,
 				B3E7B5881CC2AC0600A0062D /* RNCustomerly.h */,
 				B3E7B5891CC2AC0600A0062D /* RNCustomerly.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
@@ -75,10 +63,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNCustomerly" */;
 			buildPhases = (
-				286BD1898D226CB8AFB29E9E /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
-				58B511D91A9E6C8500147676 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -120,27 +106,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		286BD1898D226CB8AFB29E9E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNCustomerly-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
@@ -271,7 +236,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../ios/Pods/Headers/Public/CustomerlySDK",
+					"$(SRCROOT)/../../../ios/Pods/Headers/Public/CustomerlySDK/**",
 					"$(SRCROOT)/../../../ios/CustomerlySDK/**",
 					"$(SRCROOT)/../../../ios/**",
 				);
@@ -299,7 +264,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../ios/Pods/Headers/Public/CustomerlySDK",
+					"$(SRCROOT)/../../../ios/Pods/Headers/Public/CustomerlySDK/**",
 					"$(SRCROOT)/../../../ios/CustomerlySDK/**",
 					"$(SRCROOT)/../../../ios/**",
 				);
