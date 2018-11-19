@@ -6,9 +6,9 @@
 //  Copyright © 2018 Facebook. All rights reserved.
 //
 
-#import "UIWindow+PazLabs.h"
+#import "UIWindow+Customerly.h"
 
-@implementation UIWindow (PazLabs)
+@implementation UIWindow (Customerly)
 
 - (UIViewController *)visibleViewController {
     UIViewController *rootViewController = self.rootViewController;
