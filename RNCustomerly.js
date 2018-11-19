@@ -1,8 +1,19 @@
-import { NativeModules } from "react-native";
+import { NativeModules } from 'react-native';
 
 const { RNCustomerly } = NativeModules;
 
-export default RNCustomerly;
+module.exports = {
+  openSupport: () => {
+    RNCustomerly.openSupport();
+  },
+  registerUser: (email, userId, name, callback) => {
+    RNCustomerly.registerUser(email, String(userId), name, callback);
+  }
+};
+
+// export default function configure(appId, widgetColor) {
+//     NativeModules.RNCustomerly.configure(appId, widgetColor);
+// }
 
 // registerUser(email, userId, name, attributes, company, callback) {
 //   RNCustomerly.registerUser(email, userId, name, attributes, company, callback);
