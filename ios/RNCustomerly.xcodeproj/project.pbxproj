@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1800DE0C21A2BDAC00499B86 /* UIWindow+Customerly.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800DE0B21A2BDAC00499B86 /* UIWindow+Customerly.m */; };
 		4507EA7E20741388008644BB /* RNCustomerly.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCustomerly.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNCustomerly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCustomerly.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1800DE06219F1DD000499B86 /* Temporary-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Temporary-Swift.h"; sourceTree = "<group>"; };
+		1800DE0A21A2BDA200499B86 /* UIWindow+Customerly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Customerly.h"; sourceTree = "<group>"; };
+		1800DE0B21A2BDAC00499B86 /* UIWindow+Customerly.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Customerly.m"; sourceTree = "<group>"; };
 		44BCB24E7EB03FCEB456B7BE /* Pods_RNCustomerly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNCustomerly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNCustomerly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCustomerly.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNCustomerly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCustomerly.m; sourceTree = "<group>"; };
@@ -48,6 +51,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				1800DE0B21A2BDAC00499B86 /* UIWindow+Customerly.m */,
+				1800DE0A21A2BDA200499B86 /* UIWindow+Customerly.h */,
 				1800DE06219F1DD000499B86 /* Temporary-Swift.h */,
 				B3E7B5881CC2AC0600A0062D /* RNCustomerly.h */,
 				B3E7B5891CC2AC0600A0062D /* RNCustomerly.m */,
@@ -112,6 +117,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1800DE0C21A2BDAC00499B86 /* UIWindow+Customerly.m in Sources */,
 				4507EA7E20741388008644BB /* RNCustomerly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
