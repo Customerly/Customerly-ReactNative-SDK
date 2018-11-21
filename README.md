@@ -1,4 +1,3 @@
-
 # react-native-customerly
 
 ## Getting started
@@ -9,10 +8,9 @@
 
 `$ react-native link react-native-customerly`
 
-*PAY ATTENTION* ‼️: You also need to complete the _additional steps_ before using the SDK 
+_PAY ATTENTION_ ‼️: You also need to complete the _additional steps_ before using the SDK
 
 ### Manual installation
-
 
 #### iOS
 
@@ -24,57 +22,92 @@
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import io.customerly.rn.RNCustomerlyPackage;` to the imports at the top of the file
-  - Add `new RNCustomerlyPackage()` to the list returned by the `getPackages()` method
+
+- Add `import io.customerly.rn.RNCustomerlyPackage;` to the imports at the top of the file
+- Add `new RNCustomerlyPackage()` to the list returned by the `getPackages()` method
+
 2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-customerly'
-  	project(':react-native-customerly').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-customerly/android')
-  	```
+   ```
+   include ':react-native-customerly'
+   project(':react-native-customerly').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-customerly/android')
+   ```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-	compile project(':react-native-customerly')
-  	```
+   ```
+   compile project(':react-native-customerly')
+   ```
 
 ### Additional steps
 
 #### iOS
 
 1. Open you `PodFile` inside ios folder
-  - If you are using swift version 4.1, add this:
-  	```
-	pod 'CustomerlySDK', '2.1.0'
-	```
-  - If you are using swift version 4.2, add this:
-	```
-	pod 'CustomerlySDK', '2.2.0'
-	```
+
+- If you are using swift version 4.1 and XCode 9.x, add this:
+  ```
+  pod 'CustomerlySDK', '2.1.0'
+  ```
+- If you are using swift version 4.2 and XCode 10.x, add this:
+  ```
+  pod 'CustomerlySDK', '2.2.0'
+  ```
+
 2. Run `$ pod install`
 3. Open you AppDelegate.m
 4. Add import `#import <CustomerlySDK/CustomerlySDK-Swift.h>`
 5. Add the following code in your `didFinishLaunchingWithOptions`:
-	```
-	[[Customerly sharedInstance] configureWithAppId:@"YOUR_APP_ID"];
-  	[[Customerly sharedInstance] activateApp];
-	```
+   ```
+   [[Customerly sharedInstance] configureWithAppId:@"YOUR_APP_ID"];
+   [[Customerly sharedInstance] activateApp];
+   ```
 
-#### Android	
+#### Android
+
 1. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-	compile 'io.customerly:customerly-android-sdk:2.2.0'
-  	```
+   ```
+   compile 'io.customerly:customerly-android-sdk:2.2.0'
+   ```
 2. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import io.customerly.Customerly;`
-  - Inside you onCreate method add the following code:
-  	```
-	Customerly.configure(this, "YOUR_APP_ID");
-	```
+
+- Add `import io.customerly.Customerly;`
+- Inside you onCreate method add the following code:
+  ```
+  Customerly.configure(this, "YOUR_APP_ID");
+  ```
 
 ## Usage
-```javascript
-import RNCustomerly from 'react-native-customerly';
 
-// TODO: What to do with the module?
-RNCustomerly;
+```javascript
+import RNCustomerly from "react-native-customerly";
+
+RNCustomerly.registerUser(email, userId, name, attributes, company, callback);
+
+RNCustomerly.logoutUser(_null_ => {});
+
+RNCustomerly.openSupport(_null_ => {});
+
+RNCustomerly.isSdkAvailable(callback);
+
+RNCustomerly.setAttributes(attributes, callback);
+
+RNCustomerly.setCompany(attributes, callback);
+
+RNCustomerly.setSupportEnabled(enabled, callback);
+
+RNCustomerly.isSupportEnabled(callback);
+
+RNCustomerly.setSurveyEnabled(enabled, callback);
+
+RNCustomerly.isSurveyEnabled(callback);
+
+RNCustomerly.trackEvent(eventName, callback);
+
+RNCustomerly.update(callback);
+
+RNCustomerly.setVerboseLogging(enabled, callback);
+
+RNCustomerly.setAttachmentsAvailable(enabled, callback);
 ```
-  
+
+For all the explanation and the methods signature you can check directly the native SDK at the following links:
+ - iOS: https://github.com/customerly/Customerly-iOS-SDK
+ - Android: https://github.com/customerly/Customerly-Android-SDK

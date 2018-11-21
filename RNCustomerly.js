@@ -10,12 +10,12 @@ module.exports = {
       RNCustomerly.openSupport();
     }
   },
-  registerUser: (email, userId, name, callback) => {
-    RNCustomerly.registerUser(email, String(userId), name, callback);
+  registerUser: (email, userId = null, name = null, attributes = null, company = null, callback = null) => {
+    RNCustomerly.registerUser(email, userId, name, attributes, company, callback);
   }
 };
 
-// export default function configure(appId, widgetColor) {
+// configure(appId, widgetColor) {
 //     NativeModules.RNCustomerly.configure(appId, widgetColor);
 // }
 
