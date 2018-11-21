@@ -125,8 +125,12 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * Returns true if the SDK is available, false otherwise
      */
     @ReactMethod
-    public void isSdkAvailable(@NonNull Callback callback) {
-        callback.invoke(Customerly.isSdkAvailable());
+    public void isSdkAvailable(Promise promise) {
+        try {
+            promise.resolve(Customerly.isSdkAvailable());
+        } catch (Exception e) {
+            promise.reject(ERROR, e);
+        }
     }
 
     /**

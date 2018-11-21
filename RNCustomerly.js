@@ -12,28 +12,18 @@ module.exports = {
   },
   registerUser: (email, userId = null, name = null, attributes = null, company = null, callback = null) => {
     RNCustomerly.registerUser(email, userId, name, attributes, company, callback);
+  },
+  logoutUser: callback => {
+    if (callback) {
+      RNCustomerly.logoutUser(callback);
+    } else {
+      RNCustomerly.logoutUser();
+    }
+  },
+  isSdkAvailable: async () => {
+    return RNCustomerly.isSdkAvailable();
   }
 };
-
-// configure(appId, widgetColor) {
-//     NativeModules.RNCustomerly.configure(appId, widgetColor);
-// }
-
-// registerUser(email, userId, name, attributes, company, callback) {
-//   RNCustomerly.registerUser(email, userId, name, attributes, company, callback);
-// }
-
-// logoutUser() {
-//   RNCustomerly.logoutUser((_null_) => { });
-// }
-
-// openSupport() {
-//   RNCustomerly.openSupport((_null_) => { });
-// }
-
-// isSdkAvailable(callback) {
-//   RNCustomerly.isSdkAvailable(callback);
-// }
 
 // setAttributes(attributes, callback) {
 //   RNCustomerly.setAttributes(attributes, callback);

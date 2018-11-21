@@ -36,5 +36,22 @@ RCT_EXPORT_METHOD(openSupport)
     [[Customerly sharedInstance] openSupportFrom:rootViewController];
 }
 
+RCT_EXPORT_METHOD(logoutUser)
+{
+    [[Customerly sharedInstance] logoutUser];
+}
+
+RCT_REMAP_METHOD(isSdkAvailable, isSdkAvailableWithResolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+{
+    BOOL isAvailable = [[Customerly sharedInstance] isSDKAvailable];
+    
+    if (isAvailable) {
+        resolve(isAvailable ? @YES : @NO);
+    } else {
+        NSError *error = [[NSError alloc] initWithDomain:@"io.customerly" code:200 userInfo:NULL];
+        reject(@"error", @"error description", error);
+    }
+}
+
 @end
 
