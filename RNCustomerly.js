@@ -1,4 +1,4 @@
-import { NativeModules } from 'react-native';
+import { NativeModules } from "react-native";
 
 const { RNCustomerly } = NativeModules;
 
@@ -10,15 +10,17 @@ module.exports = {
       RNCustomerly.openSupport();
     }
   },
-  registerUser: (email, userId = null, name = null, attributes = null, company = null, callback = null) => {
-    RNCustomerly.registerUser(email, userId, name, attributes, company, callback);
+  registerUser: async (
+    email,
+    userId = null,
+    name = null,
+    attributes = null,
+    company = null
+  ) => {
+    return RNCustomerly.registerUser(email, userId, name, attributes, company);
   },
-  logoutUser: callback => {
-    if (callback) {
-      RNCustomerly.logoutUser(callback);
-    } else {
-      RNCustomerly.logoutUser();
-    }
+  logoutUser: () => {
+    RNCustomerly.logoutUser();
   },
   isSdkAvailable: async () => {
     return RNCustomerly.isSdkAvailable();

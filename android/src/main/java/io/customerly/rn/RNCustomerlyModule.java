@@ -60,7 +60,8 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
             @Nullable ReadableMap attributes,
             @Nullable ReadableMap company,
             @Nullable final Callback callback) {
-        Customerly.registerUser(
+        try {
+            Customerly.registerUser(
                 email,
                 userId,
                 name,
@@ -69,23 +70,46 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
                 new Function0<Unit>() {
                     @Override
                     public Unit invoke() {
-                        if (callback != null) {
-                            callback.invoke(true);
-                        }
+                        promise.resolve(true);
                         return null;
                     }
                 },
                 new Function0<Unit>() {
                     @Override
                     public Unit invoke() {
-                        if (callback != null) {
-                            callback.invoke(false);
-                        }
+                        promise.reject(ERROR, e);
                         return null;
                     }
                 }
         );
-
+        } catch (Exception e) {
+            promise.reject(ERROR, e);
+        }
+        // Customerly.registerUser(
+        //         email,
+        //         userId,
+        //         name,
+        //         readableMap2hashmap(attributes),
+        //         readableMap2hashmap(company),
+        //         new Function0<Unit>() {
+        //             @Override
+        //             public Unit invoke() {
+        //                 if (callback != null) {
+        //                     callback.invoke(true);
+        //                 }
+        //                 return null;
+        //             }
+        //         },
+        //         new Function0<Unit>() {
+        //             @Override
+        //             public Unit invoke() {
+        //                 if (callback != null) {
+        //                     callback.invoke(false);
+        //                 }
+        //                 return null;
+        //             }
+        //         }
+        // );
     }
     /**
      * Call this method to close the user's Customerly session.<br>
@@ -93,11 +117,8 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * You have to configure the Customerly SDK before using this method with [.configure]
      */
     @ReactMethod
-    public void logoutUser(@Nullable Callback callback) {
+    public void logoutUser() {
         Customerly.logoutUser();
-        if (callback != null) {
-            callback.invoke(null, null);
-        }
     }
 
     /**
