@@ -29,6 +29,9 @@ android {
 
 repositories {
     mavenCentral()
+    maven {
+        url 'http://dl.bintray.com/giannign1/maven'
+    }
     google()
     jcenter()
 }
