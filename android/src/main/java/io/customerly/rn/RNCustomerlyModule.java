@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -59,8 +60,9 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
             @Nullable String name,
             @Nullable ReadableMap attributes,
             @Nullable ReadableMap company,
-            @Nullable final Callback callback) {
-        Customerly.registerUser(
+            final Promise promise) {
+        try {
+            Customerly.registerUser(
                 email,
                 userId,
                 name,
@@ -69,23 +71,46 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
                 new Function0<Unit>() {
                     @Override
                     public Unit invoke() {
-                        if (callback != null) {
-                            callback.invoke(true);
-                        }
+                        promise.resolve(true);
                         return null;
                     }
                 },
                 new Function0<Unit>() {
                     @Override
                     public Unit invoke() {
-                        if (callback != null) {
-                            callback.invoke(false);
-                        }
+                        promise.reject("200","ERROR");
                         return null;
                     }
                 }
         );
-
+        } catch (Exception e) {
+            promise.reject("200","ERROR");
+        }
+        // Customerly.registerUser(
+        //         email,
+        //         userId,
+        //         name,
+        //         readableMap2hashmap(attributes),
+        //         readableMap2hashmap(company),
+        //         new Function0<Unit>() {
+        //             @Override
+        //             public Unit invoke() {
+        //                 if (callback != null) {
+        //                     callback.invoke(true);
+        //                 }
+        //                 return null;
+        //             }
+        //         },
+        //         new Function0<Unit>() {
+        //             @Override
+        //             public Unit invoke() {
+        //                 if (callback != null) {
+        //                     callback.invoke(false);
+        //                 }
+        //                 return null;
+        //             }
+        //         }
+        // );
     }
     /**
      * Call this method to close the user's Customerly session.<br>
@@ -93,11 +118,8 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * You have to configure the Customerly SDK before using this method with [.configure]
      */
     @ReactMethod
-    public void logoutUser(@Nullable Callback callback) {
+    public void logoutUser() {
         Customerly.logoutUser();
-        if (callback != null) {
-            callback.invoke(null, null);
-        }
     }
 
     /**
@@ -107,17 +129,10 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * You have to configure the Customerly SDK before using this method with [.configure]
      */
     @ReactMethod
-    public void openSupport(@Nullable Callback callback) {
+    public void openSupport() {
         Activity currentActivity = this.getCurrentActivity();
         if (currentActivity != null) {
             Customerly.openSupport(currentActivity);
-            if (callback != null) {
-                callback.invoke(null, null);
-            }
-        } else {
-            if (callback != null) {
-                callback.invoke("Error: no current activity available");
-            }
         }
     }
 
@@ -125,8 +140,12 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * Returns true if the SDK is available, false otherwise
      */
     @ReactMethod
-    public void isSdkAvailable(@NonNull Callback callback) {
-        callback.invoke(Customerly.isSdkAvailable());
+    public void isSdkAvailable(Promise promise) {
+        try {
+            promise.resolve(Customerly.isSdkAvailable());
+        } catch (Exception e) {
+            promise.reject("200","ERROR");
+        }
     }
 
     /**

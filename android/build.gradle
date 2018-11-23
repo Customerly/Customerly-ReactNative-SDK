@@ -29,12 +29,15 @@ android {
 
 repositories {
     mavenCentral()
+    maven {
+        url 'http://dl.bintray.com/giannign1/maven'
+    }
     google()
     jcenter()
 }
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
-    implementation 'io.customerly:customerly-android-sdk:2.1.0'
+    implementation 'io.customerly:customerly-android-sdk-supportlibraries:0.0.2'
 }
   

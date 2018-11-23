@@ -7,30 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1800DE0C21A2BDAC00499B86 /* UIWindow+Customerly.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800DE0B21A2BDAC00499B86 /* UIWindow+Customerly.m */; };
 		4507EA7E20741388008644BB /* RNCustomerly.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCustomerly.m */; };
-		D8A74C9AC7A1A1ABA1DA99E5 /* Pods_RNCustomerly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 106DBCB11F7DB2B7A6CF5312 /* Pods_RNCustomerly.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		58B511D91A9E6C8500147676 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		06B7081E130D9DCFB672E78E /* Pods-RNCustomerly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCustomerly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNCustomerly/Pods-RNCustomerly.debug.xcconfig"; sourceTree = "<group>"; };
-		106DBCB11F7DB2B7A6CF5312 /* Pods_RNCustomerly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNCustomerly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		134814201AA4EA6300B7C361 /* libRNCustomerly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCustomerly.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		45B4AAA4206EE58A00A0D1F3 /* RNCustomerly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNCustomerly-Bridging-Header.h"; sourceTree = "<group>"; };
+		1800DE06219F1DD000499B86 /* Temporary-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Temporary-Swift.h"; sourceTree = "<group>"; };
+		1800DE0A21A2BDA200499B86 /* UIWindow+Customerly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Customerly.h"; sourceTree = "<group>"; };
+		1800DE0B21A2BDAC00499B86 /* UIWindow+Customerly.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Customerly.m"; sourceTree = "<group>"; };
+		44BCB24E7EB03FCEB456B7BE /* Pods_RNCustomerly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNCustomerly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNCustomerly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCustomerly.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNCustomerly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCustomerly.m; sourceTree = "<group>"; };
-		D61473A54C4153DA56BBDC92 /* Pods-RNCustomerly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCustomerly.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNCustomerly/Pods-RNCustomerly.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,13 +26,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8A74C9AC7A1A1ABA1DA99E5 /* Pods_RNCustomerly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12C5C5522D86A84B861BB963 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44BCB24E7EB03FCEB456B7BE /* Pods_RNCustomerly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -56,30 +51,14 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				1800DE0B21A2BDAC00499B86 /* UIWindow+Customerly.m */,
+				1800DE0A21A2BDA200499B86 /* UIWindow+Customerly.h */,
+				1800DE06219F1DD000499B86 /* Temporary-Swift.h */,
 				B3E7B5881CC2AC0600A0062D /* RNCustomerly.h */,
 				B3E7B5891CC2AC0600A0062D /* RNCustomerly.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
-				45B4AAA4206EE58A00A0D1F3 /* RNCustomerly-Bridging-Header.h */,
-				D00200EF630D3C3E63139343 /* Pods */,
-				C1B91A3ADE44D9F2C08F93A8 /* Frameworks */,
+				12C5C5522D86A84B861BB963 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		C1B91A3ADE44D9F2C08F93A8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				106DBCB11F7DB2B7A6CF5312 /* Pods_RNCustomerly.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D00200EF630D3C3E63139343 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				06B7081E130D9DCFB672E78E /* Pods-RNCustomerly.debug.xcconfig */,
-				D61473A54C4153DA56BBDC92 /* Pods-RNCustomerly.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,11 +68,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNCustomerly" */;
 			buildPhases = (
-				B754DE393B4DD826E2579739 /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
-				58B511D91A9E6C8500147676 /* CopyFiles */,
-				4E9287F6B2A8F41198A95874 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,47 +112,12 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4E9287F6B2A8F41198A95874 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNCustomerly/Pods-RNCustomerly-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B754DE393B4DD826E2579739 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNCustomerly-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1800DE0C21A2BDAC00499B86 /* UIWindow+Customerly.m in Sources */,
 				4507EA7E20741388008644BB /* RNCustomerly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +153,10 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../../../ios",
+					"$(SRCROOT)/../../../",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -263,6 +208,10 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../../../ios",
+					"$(SRCROOT)/../../../",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -282,14 +231,20 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06B7081E130D9DCFB672E78E /* Pods-RNCustomerly.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(SRCROOT)/../../../ios/CustomerlySDK",
+					"$(SRCROOT)/../../../ios/Pods/CustomerlySDK/CustomerlySDK",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../React/**",
-					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../../ios/Pods/Headers/Public/CustomerlySDK/**",
+					"$(SRCROOT)/../../../ios/CustomerlySDK/**",
+					"$(SRCROOT)/../../../ios/**",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -304,14 +259,20 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D61473A54C4153DA56BBDC92 /* Pods-RNCustomerly.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(SRCROOT)/../../../ios/CustomerlySDK",
+					"$(SRCROOT)/../../../ios/Pods/CustomerlySDK/CustomerlySDK",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../React/**",
-					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../../ios/Pods/Headers/Public/CustomerlySDK/**",
+					"$(SRCROOT)/../../../ios/CustomerlySDK/**",
+					"$(SRCROOT)/../../../ios/**",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";

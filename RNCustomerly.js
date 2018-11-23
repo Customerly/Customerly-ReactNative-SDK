@@ -1,62 +1,58 @@
-
 import { NativeModules } from 'react-native';
 
 const { RNCustomerly } = NativeModules;
 
-export default RNCustomerly;
-
-  registerUser(email, userId, name, attributes, company, callback) {
-	  RNCustomerly.registerUser(email, userId, name, attributes, company, callback);
+module.exports = {
+  openSupport: () => {
+      RNCustomerly.openSupport();
+  },
+  registerUser: async (email, userId = null, name = null, attributes = null, company = null) => {
+    return RNCustomerly.registerUser(email, userId, name, attributes, company);
+  },
+  logoutUser: () => {
+      RNCustomerly.logoutUser();
+  },
+  isSdkAvailable: async () => {
+    return RNCustomerly.isSdkAvailable();
   }
+};
 
-  logoutUser() {
-	  RNCustomerly.logoutUser((_null_) => { });
-  }
+// setAttributes(attributes, callback) {
+//   RNCustomerly.setAttributes(attributes, callback);
+// }
 
-  openSupport() {
-	  RNCustomerly.openSupport((_null_) => { });
-  }
+// setCompany(company, callback) {
+//   RNCustomerly.setCompany(attributes, callback);
+// }
 
-  isSdkAvailable(callback) {
-	  RNCustomerly.isSdkAvailable(callback);
-  }
+// setSupportEnabled(enabled, callback) {
+//   RNCustomerly.setSupportEnabled(enabled, callback);
+// }
 
-  setAttributes(attributes, callback) {
-	  RNCustomerly.setAttributes(attributes, callback);
-  }
+// isSupportEnabled(callback) {
+//   RNCustomerly.isSupportEnabled(callback);
+// }
 
-  setCompany(company, callback) {
-	  RNCustomerly.setCompany(attributes, callback);
-  }
+// setSurveyEnabled(enabled, callback) {
+//   RNCustomerly.setSurveyEnabled(enabled, callback);
+// }
 
-  setSupportEnabled(enabled, callback) {
-	  RNCustomerly.setSupportEnabled(enabled, callback);
-  }
+// isSurveyEnabled(callback) {
+//   RNCustomerly.isSurveyEnabled(callback);
+// }
 
-  isSupportEnabled(callback) {
-	  RNCustomerly.isSupportEnabled(callback);
-  }
+// trackEvent(eventName, callback) {
+//   RNCustomerly.trackEvent(eventName, callback);
+// }
 
-  setSurveyEnabled(enabled, callback) {
-	  RNCustomerly.setSurveyEnabled(enabled, callback);
-  }
+// update(callback) {
+//   RNCustomerly.update(callback);
+// }
 
-  isSurveyEnabled(callback) {
-	  RNCustomerly.isSurveyEnabled(callback);
-  }
+// setVerboseLogging(enabled, callback) {
+//   RNCustomerly.setVerboseLogging(enabled, callback);
+// }
 
-  trackEvent(eventName, callback) {
-	  RNCustomerly.trackEvent(eventName, callback);
-  }
-
-  update(callback) {
-	  RNCustomerly.update(callback);
-  }
-
-  setVerboseLogging(enabled, callback) {
-	  RNCustomerly.setVerboseLogging(enabled, callback);
-  }
-
-  setAttachmentsAvailable(enabled, callback) {
-	  RNCustomerly.setAttachmentsAvailable(enabled, callback);
-  }
+// setAttachmentsAvailable(enabled, callback) {
+//   RNCustomerly.setAttachmentsAvailable(enabled, callback);
+// }
