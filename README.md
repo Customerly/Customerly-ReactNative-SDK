@@ -64,7 +64,7 @@ _PAY ATTENTION_ ‼️: You also need to complete the _additional steps_ before 
 
 1. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
    ```
-   compile 'io.customerly:customerly-android-sdk:2.2.0'
+   compile 'io.customerly:customerly-android-sdk-supportlibraries:0.0.2'
    ```
 2. Open up `android/app/src/main/java/[...]/MainActivity.java`
 
@@ -79,13 +79,13 @@ _PAY ATTENTION_ ‼️: You also need to complete the _additional steps_ before 
 ```javascript
 import RNCustomerly from "react-native-customerly";
 
-RNCustomerly.registerUser(email, userId, name, attributes, company, callback);
+await RNCustomerly.registerUser(email, userId, name, attributes, company);
 
-RNCustomerly.logoutUser(_null_ => {});
+RNCustomerly.logoutUser(() => {});
 
-RNCustomerly.openSupport(_null_ => {});
+RNCustomerly.openSupport(() => {});
 
-RNCustomerly.isSdkAvailable(callback);
+await RNCustomerly.isSdkAvailable();
 
 RNCustomerly.setAttributes(attributes, callback);
 

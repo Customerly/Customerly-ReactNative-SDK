@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -59,7 +60,7 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
             @Nullable String name,
             @Nullable ReadableMap attributes,
             @Nullable ReadableMap company,
-            @Nullable final Callback callback) {
+            final Promise promise) {
         try {
             Customerly.registerUser(
                 email,
@@ -77,13 +78,13 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
                 new Function0<Unit>() {
                     @Override
                     public Unit invoke() {
-                        promise.reject(ERROR, e);
+                        promise.reject("200","ERROR");
                         return null;
                     }
                 }
         );
         } catch (Exception e) {
-            promise.reject(ERROR, e);
+            promise.reject("200","ERROR");
         }
         // Customerly.registerUser(
         //         email,
@@ -128,17 +129,10 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * You have to configure the Customerly SDK before using this method with [.configure]
      */
     @ReactMethod
-    public void openSupport(@Nullable Callback callback) {
+    public void openSupport() {
         Activity currentActivity = this.getCurrentActivity();
         if (currentActivity != null) {
             Customerly.openSupport(currentActivity);
-            if (callback != null) {
-                callback.invoke(null, null);
-            }
-        } else {
-            if (callback != null) {
-                callback.invoke("Error: no current activity available");
-            }
         }
     }
 
@@ -150,7 +144,7 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
         try {
             promise.resolve(Customerly.isSdkAvailable());
         } catch (Exception e) {
-            promise.reject(ERROR, e);
+            promise.reject("200","ERROR");
         }
     }
 
