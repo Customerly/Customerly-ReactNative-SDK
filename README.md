@@ -64,7 +64,11 @@ _PAY ATTENTION_ ‼️: You also need to complete the _additional steps_ before 
 
 1. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
    ```
-   compile 'io.customerly:customerly-android-sdk-supportlibraries:0.0.2'
+   repositories {
+       jcenter()
+   }
+   
+   compile 'io.customerly:customerly-android-sdk-supportlibraries:3.0.0'
    ```
 2. Open up `android/app/src/main/java/[...]/MainActivity.java`
 
