@@ -48,7 +48,7 @@ _PAY ATTENTION_ ‼️: You also need to complete the _additional steps_ before 
   ```
 - If you are using swift version 4.2 and XCode 10.x, add this:
   ```
-  pod 'CustomerlySDK', '2.2.0'
+  pod 'CustomerlySDK', '2.2.1'
   ```
 
 2. Run `$ pod install`
