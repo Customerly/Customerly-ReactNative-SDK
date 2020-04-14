@@ -70,12 +70,12 @@ _PAY ATTENTION_ ‼️: You also need to complete the _additional steps_ before 
    
    compile 'io.customerly:customerly-android-sdk-supportlibraries:3.0.0'
    ```
-2. Open up `android/app/src/main/java/[...]/MainActivity.java`
+2. Open up `android/app/src/main/java/[...]/MainApplication.java`
 
 - Add `import io.customerly.Customerly;`
-- Inside you onCreate method add the following code:
+- Inside your onCreate method add the following code:
   ```
-  Customerly.configure(this, "YOUR_APP_ID");
+  Customerly.configure(this, "<YOUR_APP_ID>");
   ```
 
 ## Usage

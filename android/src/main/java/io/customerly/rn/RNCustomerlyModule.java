@@ -1,4 +1,3 @@
-
 package io.customerly.rn;
 
 import android.app.Activity;
@@ -50,7 +49,7 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * @param name       Optional. The user name
      * @param attributes Optional. The user attributes HashMap<String, Any>
      * @param company    Optional. The user company HashMap<String, Any>. Remember a company map must contain a 'company_id' and a 'name'
-     * @param callback   receive true if the task completes successfully, false otherwise<br>
+     * @param promise   receive true if the task completes successfully, false otherwise<br>
      * @throws IllegalArgumentException is thrown if the attributes check fails
      */
     @ReactMethod
@@ -86,40 +85,26 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
         } catch (Exception e) {
             promise.reject("200","ERROR");
         }
-        // Customerly.registerUser(
-        //         email,
-        //         userId,
-        //         name,
-        //         readableMap2hashmap(attributes),
-        //         readableMap2hashmap(company),
-        //         new Function0<Unit>() {
-        //             @Override
-        //             public Unit invoke() {
-        //                 if (callback != null) {
-        //                     callback.invoke(true);
-        //                 }
-        //                 return null;
-        //             }
-        //         },
-        //         new Function0<Unit>() {
-        //             @Override
-        //             public Unit invoke() {
-        //                 if (callback != null) {
-        //                     callback.invoke(false);
-        //                 }
-        //                 return null;
-        //             }
-        //         }
-        // );
     }
+
     /**
      * Call this method to close the user's Customerly session.<br>
      * <br>
      * You have to configure the Customerly SDK before using this method with [.configure]
      */
     @ReactMethod
-    public void logoutUser() {
-        Customerly.logoutUser();
+    public void logoutUser(@Nullable final Promise promise) {
+        Customerly.logoutUser(
+            new Function0<Unit>() {
+                 @Override
+                 public Unit invoke() {
+                     if (promise != null) {
+                         promise.resolve(true);
+                     }
+                     return null;
+                 }
+             }
+        );
     }
 
     /**
