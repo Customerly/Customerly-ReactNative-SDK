@@ -62,15 +62,7 @@ _PAY ATTENTION_ ‼️: You also need to complete the _additional steps_ before 
 
 #### Android
 
-1. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-   ```
-   repositories {
-       jcenter()
-   }
-   
-   compile 'io.customerly:customerly-android-sdk-supportlibraries:3.0.0'
-   ```
-2. Open up `android/app/src/main/java/[...]/MainApplication.java`
+1. Open up `android/app/src/main/java/[...]/MainApplication.java`
 
 - Add `import io.customerly.Customerly;`
 - Inside your onCreate method add the following code:
