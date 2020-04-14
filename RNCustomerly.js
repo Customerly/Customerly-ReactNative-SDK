@@ -3,8 +3,8 @@ import { NativeModules } from 'react-native';
 const { RNCustomerly } = NativeModules;
 
 module.exports = {
-  openSupport: () => {
-      RNCustomerly.openSupport();
+  openSupport: async () => {
+      return RNCustomerly.openSupport();
   },
   registerUser: async (email, userId = null, name = null, attributes = null, company = null) => {
     return RNCustomerly.registerUser(email, userId, name, attributes, company);
