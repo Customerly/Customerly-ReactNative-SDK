@@ -9,14 +9,13 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                   RNCustomerly
                    DESC
-  s.homepage     = ""
+  s.homepage     = package['homepage']
   s.license      = package['license']
   s.author       = package['author']
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/FRizzonelli/Customerly-ReactNative-SDK.git", :tag => "master" }
   s.requires_arc = true
   s.static_framework = true
-  s.homepage     = package['homepage']
 
   s.dependency 'React'
   s.dependency 'CustomerlySDK'
