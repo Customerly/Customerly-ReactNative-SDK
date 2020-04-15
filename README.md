@@ -36,11 +36,16 @@ _PAY ATTENTION_ ‼️: You also need to complete the _additional steps_ before 
   ```
   pod 'CustomerlySDK', '2.2.1'
   ```
-
-2. Run `$ pod install`
-3. Open you AppDelegate.m
-4. Add import `#import <CustomerlySDK/CustomerlySDK-Swift.h>`
-5. Add the following code in your `didFinishLaunchingWithOptions`:
+- If you are using swift version 5 and XCode 10.3>, add this:
+  ```
+  pod 'CustomerlySDK', '3.1.0'
+  ```
+  
+2. Make sure to use `use_frameworks!` in your podfile.
+3. Run `$ pod install`
+4. Open you AppDelegate.m
+5. Add import `#import <CustomerlySDK/CustomerlySDK-Swift.h>`
+6. Add the following code in your `didFinishLaunchingWithOptions`:
    ```
    [[Customerly sharedInstance] configureWithAppId:@"YOUR_APP_ID"];
    [[Customerly sharedInstance] activateApp];
