@@ -4,9 +4,12 @@
 
 `$ npm install react-native-customerly --save`
 
+`$ npm install --production`
+
 ### Mostly automatic installation
 
 `$ react-native link react-native-customerly`
+
 
 _PAY ATTENTION_ ‼️: You also need to complete the _additional steps_ before using the SDK
 
@@ -19,28 +22,11 @@ _PAY ATTENTION_ ‼️: You also need to complete the _additional steps_ before 
 3. In XCode, in the project navigator, select your project. Add `libRNCustomerly.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)
 
-#### Android
-
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-
-- Add `import io.customerly.rn.RNCustomerlyPackage;` to the imports at the top of the file
-- Add `new RNCustomerlyPackage()` to the list returned by the `getPackages()` method
-
-2. Append the following lines to `android/settings.gradle`:
-   ```
-   include ':react-native-customerly'
-   project(':react-native-customerly').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-customerly/android')
-   ```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-   ```
-   compile project(':react-native-customerly')
-   ```
-
 ### Additional steps
 
 #### iOS
 
-1. Open you `PodFile` inside ios folder
+1. Open your `PodFile` inside ios folder
 
 - If you are using swift version 4.1 and XCode 9.x, add this:
   ```
