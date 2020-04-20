@@ -13,39 +13,15 @@
 
 _PAY ATTENTION_ ‼️: You also need to complete the _additional steps_ before using the SDK
 
-### Manual installation
-
-#### iOS
-
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-customerly` and add `RNCustomerly.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNCustomerly.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)
-
 ### Additional steps
 
 #### iOS
 
-1. Open your `PodFile` inside ios folder
-
-- If you are using swift version 4.1 and XCode 9.x, add this:
-  ```
-  pod 'CustomerlySDK', '2.1.0'
-  ```
-- If you are using swift version 4.2 and XCode 10.x, add this:
-  ```
-  pod 'CustomerlySDK', '2.2.1'
-  ```
-- If you are using swift version 5 and XCode 10.3>, add this:
-  ```
-  pod 'CustomerlySDK', '3.1.0'
-  ```
-  
-2. Make sure to use `use_frameworks!` in your podfile.
-3. Run `$ pod install`
-4. Open you AppDelegate.m
-5. Add import `#import <CustomerlySDK/CustomerlySDK-Swift.h>`
-6. Add the following code in your `didFinishLaunchingWithOptions`:
+1. Run `cd ios` on your main project folder
+2. Run `pod install`
+3. Open you AppDelegate.m
+4. Add import `#import <CustomerlySDK/CustomerlySDK-Swift.h>`
+5. Add the following code in your `didFinishLaunchingWithOptions`:
    ```
    [[Customerly sharedInstance] configureWithAppId:@"YOUR_APP_ID"];
    [[Customerly sharedInstance] activateApp];
