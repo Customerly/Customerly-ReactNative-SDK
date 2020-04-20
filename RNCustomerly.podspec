@@ -19,12 +19,12 @@ Pod::Spec.new do |s|
 
   s.dependency 'React'
   s.dependency 'CustomerlySDK'
-  s.ios.xcconfig = {
+  s.xcconfig = {
     'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/CustomerlySDK/CustomerlySDK"'
   }
 
-  # s.source_files        = 'ios/**/*.{h,m,swift}'
-  s.source_files  = "RNCustomerly/**/*.{h,m}"
+  s.source_files        = 'ios/**/*.{h,m,swift}'
+  #s.source_files  = "RNCustomerly/**/*.{h,m,swift}"
   s.exclude_files       = 'android/**/*'
   #s.dependency "others"
 

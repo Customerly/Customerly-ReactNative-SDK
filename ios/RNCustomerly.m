@@ -1,7 +1,6 @@
 #import "RNCustomerly.h"
 #import "UIWindow+Customerly.h"
 #import <React/RCTBridgeModule.h>
-//#import <CustomerlySDK/CustomerlySDK-umbrella.h>
 
 @implementation RNCustomerly
 
