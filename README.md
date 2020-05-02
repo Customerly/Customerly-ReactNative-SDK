@@ -73,4 +73,4 @@ RNCustomerly.setAttachmentsAvailable(enabled, callback);
 
 For all the explanation and the methods signature you can check directly the native SDK at the following links:
  - iOS: https://github.com/customerly/Customerly-iOS-SDK
- - Android: https://github.com/customerly/Customerly-Android-SDK
+ - Android: https://github.com/customerly/Android-SDK
