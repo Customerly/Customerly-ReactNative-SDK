@@ -1,8 +1,8 @@
 package io.customerly.rn;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
@@ -26,11 +26,8 @@ import kotlin.jvm.functions.Function0;
 
 public class RNCustomerlyModule extends ReactContextBaseJavaModule {
 
-//    private final ReactApplicationContext reactContext;
-
     RNCustomerlyModule(ReactApplicationContext reactContext) {
         super(reactContext);
-//        this.reactContext = reactContext;
     }
 
     @Override
