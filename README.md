@@ -4,14 +4,11 @@
 
 `$ npm install react-native-customerly --save`
 
-`$ npm install --production`
+Or if you are using yarn:
 
-### Mostly automatic installation
+`$ yarn add react-native-customerly`
 
-`$ react-native link react-native-customerly`
-
-
-_PAY ATTENTION_ ‼️: You also need to complete the _additional steps_ before using the SDK
+_PAY ATTENTION_: You also need to complete the _additional steps_ before using the SDK
 
 ### Additional steps
 
@@ -52,6 +49,8 @@ await RNCustomerly.isSdkAvailable();
 
 RNCustomerly.setAttributes(attributes, callback);
 
+// DOWN HERE STILL HAVE TO BE IMPLEMENTED
+
 RNCustomerly.setCompany(attributes, callback);
 
 RNCustomerly.setSupportEnabled(enabled, callback);
@@ -74,3 +73,9 @@ RNCustomerly.setAttachmentsAvailable(enabled, callback);
 For all the explanation and the methods signature you can check directly the native SDK at the following links:
  - iOS: https://github.com/customerly/Customerly-iOS-SDK
  - Android: https://github.com/customerly/Android-SDK
+
+## Troubleshooting
+
+### iOS
+
+You may need to enable `use_frameworks!` in your Podfile. This also requires you to comment out all the Flipper directives in your Podfile.

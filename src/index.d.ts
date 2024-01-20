@@ -9,4 +9,7 @@ declare module "react-native-customerly" {
   ): Promise<void>;
   export function logoutUser(): Promise<void>;
   export function isSdkAvailable(): Promise<void>;
+  export function setAttributes(attributes: {
+    [key: string]: any;
+  }): Promise<void>;
 }

@@ -16,12 +16,12 @@ RCT_EXPORT_MODULE()
 RCT_REMAP_METHOD(registerUser, email:(NSString* _Nonnull)email userId: (NSString* _Nullable)userId name: (NSString* _Nullable)name attributes: (NSDictionary* _Nullable)attributes company: (NSDictionary* _Nullable)company registerUserWithResolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     [[Customerly sharedInstance] registerUserWithEmail:email user_id:userId name:name attributes:attributes company:company
-                                               success:^{
-                                                   resolve(@YES);
-                                               } failure:^{
-                                                   NSError *error = [[NSError alloc] initWithDomain:@"io.customerly" code:200 userInfo:NULL];
-                                                   reject(@"error", @"User registration failed", error);
-                                               }];
+            success:^{
+                resolve(@YES);
+            } failure:^{
+                NSError *error = [[NSError alloc] initWithDomain:@"io.customerly" code:200 userInfo:NULL];
+                reject(@"error", @"User registration failed", error);
+            }];
 }
 
 RCT_EXPORT_METHOD(openSupport)
@@ -35,7 +35,7 @@ RCT_EXPORT_METHOD(logoutUser)
     [[Customerly sharedInstance] logoutUser];
 }
 
-RCT_REMAP_METHOD(isSdkAvailable, isSdkAvailableWithResolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+RCT_REMAP_METHOD(isSdkAvailable, resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     BOOL isAvailable = [[Customerly sharedInstance] isSDKAvailable];
     
@@ -45,6 +45,17 @@ RCT_REMAP_METHOD(isSdkAvailable, isSdkAvailableWithResolver:(RCTPromiseResolveBl
         NSError *error = [[NSError alloc] initWithDomain:@"io.customerly" code:200 userInfo:NULL];
         reject(@"error", @"Customerly SDK not available", error);
     }
+}
+
+RCT_REMAP_METHOD(setAttributes, attributes: (NSDictionary* _Nullable)attributes resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+{
+    [[Customerly sharedInstance] setAttributesWithAttributes:attributes
+            success:^{
+                resolve(@YES);
+            } failure:^{
+                NSError *error = [[NSError alloc] initWithDomain:@"io.customerly" code:200 userInfo:NULL];
+                reject(@"error", @"Set attributes failed", error);
+            }];
 }
 
 @end
