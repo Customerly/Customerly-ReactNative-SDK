@@ -1,10 +1,10 @@
 package io.customerly.rn;
 
 import android.app.Activity;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -37,74 +37,6 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
 
 
     /**
-     * Call this method to link your app user to the Customerly session.<br>
-     * <br>
-     * You have to configure the Customerly SDK before using this method with [.configure]
-     *
-     * @param email      The user email address
-     * @param userId     Optional. The user id
-     * @param name       Optional. The user name
-     * @param attributes Optional. The user attributes HashMap<String, Any>
-     * @param company    Optional. The user company HashMap<String, Any>. Remember a company map must contain a 'company_id' and a 'name'
-     * @param promise   receive true if the task completes successfully, false otherwise<br>
-     * @throws IllegalArgumentException is thrown if the attributes check fails
-     */
-    @ReactMethod
-    public void registerUser(
-            @NonNull String email,
-            @Nullable String userId,
-            @Nullable String name,
-            @Nullable ReadableMap attributes,
-            @Nullable ReadableMap company,
-            final Promise promise) {
-        try {
-            Customerly.registerUser(
-                email,
-                userId,
-                name,
-                readableMap2hashmap(attributes),
-                readableMap2hashmap(company),
-                new Function0<Unit>() {
-                    @Override
-                    public Unit invoke() {
-                        promise.resolve(true);
-                        return null;
-                    }
-                },
-                new Function0<Unit>() {
-                    @Override
-                    public Unit invoke() {
-                        promise.reject("200","ERROR");
-                        return null;
-                    }
-                }
-        );
-        } catch (Exception e) {
-            promise.reject("200","ERROR");
-        }
-    }
-
-    /**
-     * Call this method to close the user's Customerly session.<br>
-     * <br>
-     * You have to configure the Customerly SDK before using this method with [.configure]
-     */
-    @ReactMethod
-    public void logoutUser(@Nullable final Promise promise) {
-        Customerly.logoutUser(
-            new Function0<Unit>() {
-                 @Override
-                 public Unit invoke() {
-                     if (promise != null) {
-                         promise.resolve(true);
-                     }
-                     return null;
-                 }
-             }
-        );
-    }
-
-    /**
      * Call this method to open the Support Activity.<br></br>
      * A call to this method will force the enabling if the support logic if it has been previously disabled with [.setSupportEnabled]
      * <br></br>
@@ -119,14 +51,68 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
     }
 
     /**
+     * Call this method to link your app user to the Customerly session.<br>
+     * <br>
+     * You have to configure the Customerly SDK before using this method with [.configure]
+     *
+     * @param email      The user email address
+     * @param userId     Optional. The user id
+     * @param name       Optional. The user name
+     * @param attributes Optional. The user attributes HashMap<String, Any>
+     * @param company    Optional. The user company HashMap<String, Any>. Remember a company map must contain a 'company_id' and a 'name'
+     * @param promise    receive true if the task completes successfully, false otherwise<br>
+     * @throws IllegalArgumentException is thrown if the attributes check fails
+     */
+    @ReactMethod
+    public void registerUser(@NonNull String email, @Nullable String userId, @Nullable String name, @Nullable ReadableMap attributes, @Nullable ReadableMap company, final Promise promise) {
+        try {
+            Customerly.registerUser(email, userId, name, readableMap2hashmap(attributes), readableMap2hashmap(company), new Function0<Unit>() {
+                @Override
+                public Unit invoke() {
+                    promise.resolve(true);
+                    return null;
+                }
+            }, new Function0<Unit>() {
+                @Override
+                public Unit invoke() {
+                    promise.reject("200", "ERROR");
+                    return null;
+                }
+            });
+        } catch (Exception e) {
+            promise.reject("200", e.getMessage());
+        }
+    }
+
+    /**
+     * Call this method to close the user's Customerly session.<br>
+     * <br>
+     * You have to configure the Customerly SDK before using this method with [.configure]
+     */
+    @ReactMethod
+    public void logoutUser(final Promise promise) {
+        try {
+            Customerly.logoutUser(new Function0<Unit>() {
+                @Override
+                public Unit invoke() {
+                    promise.resolve(true);
+                    return null;
+                }
+            });
+        } catch (Exception e) {
+            promise.reject("200", e.getMessage());
+        }
+    }
+
+    /**
      * Returns true if the SDK is available, false otherwise
      */
     @ReactMethod
-    public void isSdkAvailable(Promise promise) {
+    public void isSdkAvailable(final Promise promise) {
         try {
             promise.resolve(Customerly.isSdkAvailable());
         } catch (Exception e) {
-            promise.reject("200","ERROR");
+            promise.reject("200", e.getMessage());
         }
     }
 
@@ -136,31 +122,28 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * You have to configure the Customerly SDK before using this method with [.configure]
      *
      * @param attributes Attributes HashMap for the user. Can contain only String, char, int, long, float or double values
-     * @param callback   receive true if the task completes successfully, false otherwise
+     * @param promise    receive true if the task completes successfully, false otherwise<br>
      * @throws IllegalArgumentException is thrown if the attributes check fails
      */
     @ReactMethod
-    public void setAttributes(@NonNull ReadableMap attributes, @Nullable final Callback callback) {
-        Customerly.setAttributes(
-                this.readableMap2hashmap(attributes),
-                new Function0<Unit>() {
-                    @Override
-                    public Unit invoke() {
-                        if (callback != null) {
-                            callback.invoke(true);
-                        }
-                        return null;
-                    }
-                },
-                new Function0<Unit>() {
-                    @Override
-                    public Unit invoke() {
-                        if (callback != null) {
-                            callback.invoke(false);
-                        }
-                        return null;
-                    }
-                });
+    public void setAttributes(@NonNull ReadableMap attributes, final Promise promise) {
+        try {
+            Customerly.setAttributes(this.readableMap2hashmap(attributes), new Function0<Unit>() {
+                @Override
+                public Unit invoke() {
+                    promise.resolve(true);
+                    return null;
+                }
+            }, new Function0<Unit>() {
+                @Override
+                public Unit invoke() {
+                    promise.reject("200", "ERROR");
+                    return null;
+                }
+            });
+        } catch (Exception e) {
+            promise.reject("200", e.getMessage());
+        }
     }
 
     /**
@@ -169,31 +152,28 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * You have to configure the Customerly SDK before using this method with [.configure]
      *
      * @param company  Company attributes map for the user. Can contain only String, char, int, long, float or double values and must contain the company id and name with keys 'company_id' and 'name'
-     * @param callback receive true if the task completes successfully, false otherwise
+     * @param promise  receive true if the task completes successfully, false otherwise<br>
      * @throws IllegalArgumentException is thrown if the attributes check fails
      */
     @ReactMethod
-    public void setCompany(@NonNull ReadableMap company, @Nullable final Callback callback) {
-        Customerly.setCompany(
-                this.readableMap2hashmap(company),
-                new Function0<Unit>() {
-                    @Override
-                    public Unit invoke() {
-                        if (callback != null) {
-                            callback.invoke(true);
-                        }
-                        return null;
-                    }
-                },
-                new Function0<Unit>() {
-                    @Override
-                    public Unit invoke() {
-                        if (callback != null) {
-                            callback.invoke(false);
-                        }
-                        return null;
-                    }
-                });
+    public void setCompany(@NonNull ReadableMap company, final Promise promise) {
+        try {
+            Customerly.setCompany(this.readableMap2hashmap(company), new Function0<Unit>() {
+                @Override
+                public Unit invoke() {
+                    promise.resolve(true);
+                    return null;
+                }
+            }, new Function0<Unit>() {
+                @Override
+                public Unit invoke() {
+                    promise.reject("200", "ERROR");
+                    return null;
+                }
+            });
+        } catch (Exception e) {
+            promise.reject("200", e.getMessage());
+        }
     }
 
     /**
@@ -201,19 +181,25 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * A call to the method [.openSupport(Activity)] will force the enabling if it is disabled
      */
     @ReactMethod
-    public void setSupportEnabled(boolean enabled, @Nullable Callback callback) {
-        Customerly.setSupportEnabled(enabled);
-        if (callback != null) {
-            callback.invoke(null, null);
+    public void setSupportEnabled(boolean enabled, final Promise promise) {
+        try {
+            Customerly.setSupportEnabled(enabled);
+            promise.resolve(true);
+        } catch (Exception e) {
+            promise.reject("200", e.getMessage());
         }
     }
 
     /**
-     * @param callback receive true if the support is enabled, false otherwise
+     * @param promise receive true if the support is enabled, false otherwise
      */
     @ReactMethod
-    public void isSupportEnabled(@NonNull Callback callback) {
-        callback.invoke(Customerly.isSupportEnabled());
+    public void isSupportEnabled(final Promise promise) {
+        try {
+            promise.resolve(Customerly.isSupportEnabled());
+        } catch (Exception e) {
+            promise.reject("200", e.getMessage());
+        }
     }
 
     /**
@@ -221,19 +207,25 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * A call to the method [.openSupport(Activity)] will force the enabling if it is disabled
      */
     @ReactMethod
-    public void setSurveyEnabled(boolean enabled, @Nullable Callback callback) {
-        Customerly.setSurveyEnabled(enabled);
-        if (callback != null) {
-            callback.invoke(null, null);
+    public void setSurveyEnabled(boolean enabled, final Promise promise) {
+        try {
+            Customerly.setSurveyEnabled(enabled);
+            promise.resolve(true);
+        } catch (Exception e) {
+            promise.reject("200", e.getMessage());
         }
     }
 
     /**
-     * @param callback receive true if the surveys are enabled, false otherwise
+     * @param promise receive true if the survey is enabled, false otherwise
      */
     @ReactMethod
-    public void isSurveyEnabled(@NonNull Callback callback) {
-        callback.invoke(Customerly.isSurveyEnabled());
+    public void isSurveyEnabled(final Promise promise) {
+        try {
+            promise.resolve(Customerly.isSurveyEnabled());
+        } catch (Exception e) {
+            promise.reject("200", e.getMessage());
+        }
     }
 
     /**
@@ -244,41 +236,39 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * @param eventName The event custom label
      */
     @ReactMethod
-    public void trackEvent(@NonNull String eventName, @Nullable Callback callback) {
-        Customerly.trackEvent(eventName);
-        if (callback != null) {
-            callback.invoke(null, null);
+    public void trackEvent(@NonNull String eventName, final Promise promise) {
+        try {
+            Customerly.trackEvent(eventName);
+            promise.resolve(true);
+        } catch (Exception e) {
+            promise.reject("200", e.getMessage());
         }
     }
 
     /**
      * Call this method to force a check for pending Surveys or Message for the current user.<br>
      *
-     * @param callback receive true if the task completes successfully, false otherwise<br>
-     *                 <br>
-     *                 You have to configure the Customerly SDK before using this method with [.configure()]
+     * @param promise receive true if the task completes successfully, false otherwise
      */
     @ReactMethod
-    public void update(@Nullable final Callback callback) {
-        Customerly.update(
-                new Function0<Unit>() {
-                    @Override
-                    public Unit invoke() {
-                        if (callback != null) {
-                            callback.invoke(true);
-                        }
-                        return null;
-                    }
-                },
-                new Function0<Unit>() {
-                    @Override
-                    public Unit invoke() {
-                        if (callback != null) {
-                            callback.invoke(false);
-                        }
-                        return null;
-                    }
-                });
+    public void update(final Promise promise) {
+        try {
+            Customerly.update(new Function0<Unit>() {
+                @Override
+                public Unit invoke() {
+                    promise.resolve(true);
+                    return null;
+                }
+            }, new Function0<Unit>() {
+                @Override
+                public Unit invoke() {
+                    promise.reject("200", "ERROR");
+                    return null;
+                }
+            }); 
+        } catch (Exception e) {
+            promise.reject("200", e.getMessage());
+        }
     }
 
     /**
@@ -286,10 +276,12 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * Avoid to enable it in release app versions, the suggestion is to pass your.application.package.BuildConfig.DEBUG as set value
      */
     @ReactMethod
-    public void setVerboseLogging(boolean enabled, @Nullable Callback callback) {
-        Customerly.setVerboseLogging(enabled);
-        if (callback != null) {
-            callback.invoke(null, null);
+    public void setVerboseLogging(boolean enabled, final Promise promise) {
+        try {
+            Customerly.setVerboseLogging(enabled);
+            promise.resolve(true);
+        } catch (Exception e) {
+            promise.reject("200", e.getMessage());
         }
     }
 
@@ -298,10 +290,12 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      * It is enabled by default
      */
     @ReactMethod
-    public void setAttachmentsAvailable(boolean enabled, @Nullable Callback callback) {
-        Customerly.setAttachmentsAvailable(enabled);
-        if (callback != null) {
-            callback.invoke(null, null);
+    public void setAttachmentsAvailable(boolean enabled, final Promise promise) {
+        try {
+            Customerly.setAttachmentsAvailable(enabled);
+            promise.resolve(true);
+        } catch (Exception e) {
+            promise.reject("200", e.getMessage());
         }
     }
 

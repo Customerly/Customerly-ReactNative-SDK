@@ -6,58 +6,22 @@ module.exports = {
   openSupport: async () => {
     return RNCustomerly.openSupport();
   },
-  registerUser: async (
+  registerUser: (
     email,
     userId = null,
     name = null,
     attributes = null,
     company = null
-  ) => {
-    return RNCustomerly.registerUser(email, userId, name, attributes, company);
-  },
-  logoutUser: () => {
-    RNCustomerly.logoutUser();
-  },
-  isSdkAvailable: async () => {
-    return RNCustomerly.isSdkAvailable();
-  },
-  setAttributes: async (attributes) => {
-    return RNCustomerly.setAttributes(attributes);
-  },
+  ) => RNCustomerly.registerUser(email, userId, name, attributes, company),
+  logoutUser: RNCustomerly.logoutUser,
+  isSdkAvailable: RNCustomerly.isSdkAvailable,
+  setAttributes: RNCustomerly.setAttributes,
+  setCompany: RNCustomerly.setCompany,
+  setSupportEnabled: RNCustomerly.setSupportEnabled,
+  isSupportEnabled: RNCustomerly.isSupportEnabled,
+  setSurveyEnabled: RNCustomerly.setSurveyEnabled,
+  isSurveyEnabled: RNCustomerly.isSurveyEnabled,
+  trackEvent: RNCustomerly.trackEvent,
+  update: RNCustomerly.update,
+  setVerboseLogging: RNCustomerly.setVerboseLogging,
 };
-
-// setCompany(company, callback) {
-//   RNCustomerly.setCompany(attributes, callback);
-// }
-
-// setSupportEnabled(enabled, callback) {
-//   RNCustomerly.setSupportEnabled(enabled, callback);
-// }
-
-// isSupportEnabled(callback) {
-//   RNCustomerly.isSupportEnabled(callback);
-// }
-
-// setSurveyEnabled(enabled, callback) {
-//   RNCustomerly.setSurveyEnabled(enabled, callback);
-// }
-
-// isSurveyEnabled(callback) {
-//   RNCustomerly.isSurveyEnabled(callback);
-// }
-
-// trackEvent(eventName, callback) {
-//   RNCustomerly.trackEvent(eventName, callback);
-// }
-
-// update(callback) {
-//   RNCustomerly.update(callback);
-// }
-
-// setVerboseLogging(enabled, callback) {
-//   RNCustomerly.setVerboseLogging(enabled, callback);
-// }
-
-// setAttachmentsAvailable(enabled, callback) {
-//   RNCustomerly.setAttachmentsAvailable(enabled, callback);
-// }
