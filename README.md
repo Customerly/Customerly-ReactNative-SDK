@@ -49,8 +49,6 @@ await RNCustomerly.isSdkAvailable();
 
 RNCustomerly.setAttributes(attributes, callback);
 
-// DOWN HERE STILL HAVE TO BE IMPLEMENTED
-
 RNCustomerly.setCompany(attributes, callback);
 
 RNCustomerly.setSupportEnabled(enabled, callback);
@@ -66,8 +64,6 @@ RNCustomerly.trackEvent(eventName, callback);
 RNCustomerly.update(callback);
 
 RNCustomerly.setVerboseLogging(enabled, callback);
-
-RNCustomerly.setAttachmentsAvailable(enabled, callback);
 ```
 
 For all the explanation and the methods signature you can check directly the native SDK at the following links:
