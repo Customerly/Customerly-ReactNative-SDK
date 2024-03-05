@@ -1,5 +1,8 @@
 # react-native-customerly
 
+[![Static Badge](https://img.shields.io/badge/npm-1.2.1-red?logo=npm&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Freact-native-customerly)](https://www.npmjs.com/package/react-native-customerly) ![Static Badge](https://img.shields.io/badge/typescript-supported-blue?logo=typescript&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Freact-native-customerly)
+
+
 ## Getting started
 
 `$ npm install react-native-customerly --save`
