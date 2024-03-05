@@ -1,6 +1,6 @@
 {
   "name": "react-native-customerly",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Customerly SDK for integration in ReactNative app. See more at: https://www.customerly.io/",
   "homepage": "https://github.com/Customerly/Customerly-ReactNative-SDK",
   "main": "src/RNCustomerly.js",
