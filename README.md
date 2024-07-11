@@ -78,33 +78,47 @@ If you get any errors when running `pod install` about transient libraries, add 
 ## Usage
 
 ```javascript
-import RNCustomerly from "react-native-customerly";
+import {
+  registerUser,
+  logoutUser,
+  openSupport,
+  isSdkAvailable,
+  setAttributes,
+  setCompany,
+  setSupportEnabled,
+  isSupportEnabled,
+  setSurveyEnabled,
+  isSurveyEnabled,
+  trackEvent,
+  update,
+  setVerboseLogging,
+} from "react-native-customerly";
 
-await RNCustomerly.registerUser(email, userId, name, attributes, company);
+await registerUser(email, userId, name, attributes, company);
 
-RNCustomerly.logoutUser(() => {});
+await logoutUser();
 
-RNCustomerly.openSupport(() => {});
+await openSupport();
 
-await RNCustomerly.isSdkAvailable();
+await isSdkAvailable();
 
-RNCustomerly.setAttributes(attributes, callback);
+await setAttributes(attributes);
 
-RNCustomerly.setCompany(attributes, callback);
+await setCompany(attributes);
 
-RNCustomerly.setSupportEnabled(enabled, callback);
+await setSupportEnabled(enabled);
 
-RNCustomerly.isSupportEnabled(callback);
+await isSupportEnabled();
 
-RNCustomerly.setSurveyEnabled(enabled, callback);
+await setSurveyEnabled(enabled);
 
-RNCustomerly.isSurveyEnabled(callback);
+await isSurveyEnabled();
 
-RNCustomerly.trackEvent(eventName, callback);
+await trackEvent(eventName);
 
-RNCustomerly.update(callback);
+await update();
 
-RNCustomerly.setVerboseLogging(enabled, callback);
+await setVerboseLogging(enabled);
 ```
 
 For all the explanation and the methods signature you can check directly the native SDK at the following links:
