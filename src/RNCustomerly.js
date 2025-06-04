@@ -2,6 +2,10 @@ import { NativeModules } from "react-native";
 
 const { RNCustomerly } = NativeModules;
 
+console.warn(
+  "[Customerly SDK] WARNING: This SDK is deprecated and no longer maintained. Please use the new Customerly React Native SDK instead: https://github.com/Customerly/CustomerlyReactNativeSDK"
+);
+
 module.exports = {
   openSupport: async () => {
     return RNCustomerly.openSupport();
